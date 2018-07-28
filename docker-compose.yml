@@ -1,9 +1,9 @@
-version: '3'
+version: '2'
 
 services:
   julia_env:
-    image: ijulia_dev
-    command: "bash -c 'SHELL=/bin/bash jupyter lab --no-browser --ip=* --port=9000 --allow-root --notebook-dir=/home --NotebookApp.token=\"\"'"
+    image: julia_env:latest
+    command: "bash -c 'PATH=$PATH:/root/.julia/v0.6/Conda/deps/usr/bin/ SHELL=/bin/bash jupyter lab --no-browser --ip=* --port=9000 --allow-root --notebook-dir=/home --NotebookApp.token=\"\"'"
     volumes:
       - ./:/home
       - /var/run/docker.sock:/var/run/docker.sock 
