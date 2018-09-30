@@ -9,7 +9,7 @@ NOTE: This docker-compose will mount the current directory as a volume, meaning 
 To build (only needs to be done once) run:
 
 ```bash
-docker build -t julia_env -f ./Dockerfile
+docker build -t julia_env_base -f ./Dockerfile
 ```
 
 And when you are ready to start working, run:
