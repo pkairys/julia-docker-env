@@ -1,4 +1,4 @@
-FROM julia:0.6.4
+FROM julia:1.0.0
 
 WORKDIR /home
 
@@ -7,8 +7,7 @@ RUN apt-get -qq update && apt-get -qq -y install curl bzip2 gcc g++ cmake \
     && bash /tmp/miniconda.sh -bfp /usr/local \
     && rm -rf /tmp/miniconda.sh
 
-RUN conda install jupyter jupyterlab	
+RUN conda install jupyter jupyterlab
 
-RUN julia -e 'Pkg.add("IJulia")'
-
+RUN julia -e 'Pkg.add("IJulia");Pkg.add("Plots")'
 
