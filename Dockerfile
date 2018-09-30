@@ -9,5 +9,5 @@ RUN apt-get -qq update && apt-get -qq -y install curl bzip2 gcc g++ cmake \
 
 RUN conda install jupyter jupyterlab
 
-RUN julia -e 'using Pkg; Pkg.add.(["IJulia","Plots"])'
+# RUN julia -e 'using Pkg; Pkg.add.(["IJulia","Plots"])'
 
